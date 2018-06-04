@@ -1,0 +1,123 @@
+,sid,age,gender,difficulty,engagement,externalaids,howtoimprove
+0,48,26,male,5,8,,
+1,49,24,male,2,5,Nein,Nein
+2,50,27,female,5,6,Nein,Nein
+3,51,30,male,3,5,Daf&#252;r brauch man doch keine Hilfsmittel.,
+4,52,27,male,5,7,Nein,"Es war schwierig die H&#246;he der Formen zu sch&#228;tzen, da auf dem wei&#223;en Bildschirm jeglicher Vergleich fehlte."
+5,53,28,male,5,8,Es wurden keine Hilfsmittel verwendet. Mir f&#228;llt kein Grund ein.,
+6,54,24,female,7,6,Nein,Nein
+7,55,-1,male,3,5,,Die Formen ver&#228;ndern.
+8,56,26,female,4,5,Ich habe keinerlei Hilfsmittel benutzt.,Nein.
+9,57,26,male,9,8,,
+10,58,32,noresponse,4,7,Nein.,
+11,59,31,male,4,4,N&#246;...,...
+12,60,27,female,7,5,,
+13,61,26,female,1,2,Nein,
+14,63,26,female,9,7,"Nein, ich habe mir nur immer versch. Durchmesser von Gl&#228;sern vorgestellt, die ich zuhause habe.","Ich finde, dass man den Kreis mit der Maus schlecht variieren kann. Es ist sehr umst&#228;ndlich."
+15,64,27,female,8,8,nein,Ich w&#252;rde am Ende gern die L&#246;sung wissen &#214;_&#214;
+16,65,25,male,7,6,Nein,Nein
+17,66,30,male,0,4,Nein keinerlei Hilfsmittel,"Die Kategorien was A und was B ist k&#246;nnten leicht wechseln, um es anspruchsvoller zu machen"
+18,67,24,female,3,4,"Ich habe keine Hilfsmittel verwendet, und meine Daten m&#252;ssen auch nicht aus der Studie ausgeschlossen werden. ","Mir war es nicht immer m&#246;glich eine bestimmte Form die ich lernen wollte, einzustellen. Ich wei&#223; nicht ob das jetzt an mir oder der Maus lag."
+19,68,20,female,5,10,Nein,Nein
+20,69,24,male,3,6,Nein,Nein
+21,70,33,female,1,3,"Nein, keine.",
+22,71,24,female,2,7,Nein,"Vielleicht eher einen schwarzen Hintergrund nehmen und die Farbe der Formen auch anpassen.
+
+Das rot auf wei&#223; war mit der Zeit sehr penetrant und nervt&#246;tend."
+23,72,28,male,2,9,keine Hilfsmittel benutzt,"Erh&#246;hung des Schwierigkeitsgrad w&#228;re denkbar, z.B. durch Kombination der Formen mit Farben und entsprechendem Kategorisieren."
+24,73,31,female,3,8,nein,"Wenn ein Quadrat auf ein A-Rechteck, bzw. B-Rechteck folgt, k&#246;nnte sich je nachdem das Quadrat mit A oder B kategoriesieren lassen. "
+25,74,24,female,7,7,nein,nein
+26,75,22,female,4,5,Nein,Nein
+27,76,26,female,3,5,Nein,-
+28,77,22,female,7,6,Ich habe keine jeglichen Hilfsmittel benutzt,"W&#228;hrend der Studie habe ich mir dazu Gedanken gemacht, ob aus der Ursprungsform, diese wandelbar ist. D.h. ob im System gespeichert ist welche Form sie schon ist oder ob der Teilnehmer das durch seine Versuche beeinflusst."
+29,78,26,male,9,9,nein,nein
+30,79,-1,male,7,6,nein,nein
+31,80,23,male,6,5,Nein,Nein
+32,81,18,female,6,6,,
+33,82,22,male,8,5,,
+34,83,25,male,8,5,Es wurden keinerlei Hilfmittel benutzt. Da ich das System nicht richtig erkannt habe musste ich bei ca. 30-40% raten.,
+35,84,29,male,10,5,"Keine Hilfsmittel
+Hohe M&#252;digkeit","Radius als Anhaltspunkt im ""Lernprozess"""
+36,85,22,female,3,2,"Nein ich habe keine Hilfsmittel verwendet, nur meinen Kopf",
+37,86,20,male,7,6,"-keine Hilfsmittel
+-keinen Grund zum Ausschluss der Daten","Es ist schwierig, die teils sehr &#228;hnlich gro&#223;en Formen in die richtige Kategorie einzuordnen. Auch die &#220;bung vor jedem Durchgang hat hier nicht viel geholfen."
+38,87,27,female,3,6,keine Hilfsmittel genutzt,
+39,88,27,male,1,2,,
+40,89,33,male,6,5,Nein,"Nein, eventuell k&#246;nnte es eine Option geben, den &#220;bungsteil abzuk&#252;rzen."
+41,90,22,female,3,5,nein,nein
+42,91,19,female,6,8,"Keine Hilfsmittel
+Zu geringer Lerneffekt",
+43,92,29,male,7,6,Nein keine Hilfsmittel benutzt.,Nein.
+44,93,25,male,8,6,Nein,Nein
+45,94,22,male,4,5,Nein.,Nein.
+46,95,29,female,10,2,,
+47,96,25,female,5,6,Nein,"Teilweise war das Anpassen der Rechtecke schwierig, weil die Form sich sprunghaft und nicht fl&#252;ssig ver&#228;nderte"
+48,97,27,female,9,10,Nein.,Dass die Formen auch ohne Verr&#252;cken des gr&#252;nen Punktes den Kategorienzugeordnet werden.
+49,98,27,female,2,4,nein ,
+50,99,23,female,6,7,Nein,Nein
+51,100,18,female,4,5,,
+52,101,30,male,2,7,nein.,"A=H&#246;he und B=Breite w&#228;re viel einfacher zum merken, so musste man immer umdenken."
+53,102,25,female,4,6,,
+54,103,23,male,3,5,nein,nein
+55,104,27,female,7,4,Nein,Nein
+56,105,34,female,4,9,Nein,Nein
+57,106,38,male,1,3,keine hilfsmittel eingesetzt,vielleicht die anzahl an kategorien erh&#246;hen. Auch andere geometrische formen einbeziehen..
+58,107,25,male,5,7,"Ich hab die Breite der Formen mit der jeweiligen Bildunterschrift verglichen, um ein Ma&#223; zu haben.",
+59,108,23,male,4,3,Nein,Bitte die Steuerung der Maus invertieren.
+60,109,27,female,6,5,nein,nein
+61,110,25,male,7,7,,
+62,111,25,female,6,8,keine Hilfsmittel,
+63,112,20,male,7,8,,
+64,113,25,male,2,7,Nein,
+65,114,27,female,3,5,Nein,Mausf&#252;hrung bzgl. Zeiger und Gr&#246;&#223;en&#228;nderung k&#246;nnte verbessert/vereinfacht oder manuell &#252;ber 2 Tasten gesteuert werden.
+66,115,22,female,4,5,Nein.,
+67,116,24,male,3,4,Nein.,Nein.
+68,117,27,female,7,8,Ich habe keine Hilfsmittel verwendet!,/
+69,118,29,female,3,6,"Ich habe keinerlei Hilfsmittel genutzt und sehe auch keinen weiteren Grund, warum meine Daten aus der Studie ausgeschlossen werden sollten.",
+70,119,24,female,5,6,Nein,-
+71,120,25,female,7,6,Nein,Die Testrunden am Ende waren etwas &#252;berfl&#252;ssig
+72,121,22,female,1,4,,
+73,122,26,female,4,8,Nein,Nein
+74,123,26,male,7,8,"Keine Art von Hilfsmittel benutzt.
+",
+75,124,27,female,3,5,Nein,Nein
+76,125,26,female,8,8,NEIN,"Ich fand es zu Anfang verwirrend, da ich gedacht habe, dass ich mich in jeder Lernrunde darauf einstellen muss, neue Formen zu lernen. Erst in Runde 3, 4 oder 5 habe ich bemerkt, dass die Klassifizierung immer dem gleichen Schema folgt - aber das war vermutlich so gewollt."
+77,126,26,male,5,6,Nein,Nein
+78,127,33,noresponse,5,9,"Nein, ich habe selbstverst&#228;ndlich keine Hilfsmittel benutzt. ",Die Leertaste klemmt manchmal und die Einstellung f&#252;r die Ver&#228;nderung der Formen k&#246;nnte etwas feiner sein. 
+79,128,25,female,5,5,,
+80,129,28,female,5,7,nein,nein
+81,130,32,female,6,7,,
+82,131,34,male,5,7,"nein, keine Hilfsmittel genutzt.
+aus meiner Sicht gibt es keinen Grund diese Daten auszunehmen",nein
+83,132,26,female,10,9,Nein,Nein
+84,133,27,female,5,7,"Nein, ich habe keine Hilfsmittel benutzt.",
+85,134,26,male,10,9,keine Hilfsmittel benutzt,"benutzerUNfreundliche Bedienung
+
+Gitternetzlinien im Hintergrund w&#228;hre hilfreich gewesen"
+86,135,21,female,4,5,nein,nein
+87,136,21,female,5,4,nein,nein
+88,137,26,female,7,6,,"Der Zeiger war schwierig an die richtige Position zu bringen. Leichter w&#228;re es, wenn man erst die gr&#246;&#223;e anpassen kann, die dann ""einrastet"" und man erst sp&#228;ter den Zeiger einstellt. Die Skalierung der Kreise war schwer abzusch&#228;tzen. Vllt. k&#246;nnte man den Anfangskreis im Hintergrund lassen um eine Vorstellung von der Dimenstion zu bekommen. "
+89,138,24,female,6,6,nein!,nein
+90,139,34,male,7,8,nein,
+91,140,29,male,5,0,"keine hilfsmittel, w&#228;re aber hilfreich. gerade am anfang kommt man durcheinander welche kategorien man schon festgelegt hat, dann wei&#223; man zwar die punkte an denen man die kategorie festmacht, aber nicht mehr ob diese jetzt a oder b war","die steuerung ist sehr unausgereift. vermute dass die pencil steuerung bei gedr&#252;ckter alt-taste von ps genommen wurde, die idee ist gut aber die umsetzung nicht gelungen. zwischendurch kommt frust auf, bei einer ausgereifteren bedienung h&#228;tte ich mir mehr m&#252;he gegeben und mich l&#228;nger mit der aufgabe auseinandergesetzt."
+92,141,26,female,1,4,nein,nein
+93,142,28,male,3,6,Keine Hilfsmittel benutzt und keine wissentlicher Grund f&#252;r Datenausschluss meiner Meinung nach gegeben.,"Ich hab den Eindruck, dass ausser in der ersten Testrunde, die Verteilung des Zeigers im Kreis gleich war."
+94,143,19,male,3,4,Nein,Nein
+95,144,20,female,6,7,Nein,Nein
+96,145,23,male,7,7,,
+97,146,22,female,3,5,nein ,nein
+98,147,21,female,9,8,,
+99,148,23,female,7,7,Nein,Nein
+100,149,26,female,10,9,keine Hilfmittel,"eine schiftliche Hilfestellung zur Mausbewegung w&#228;re sch&#246;n gewesen. So konnte ich erst sehr viel sp&#228;ter herausfinden, wie ich &#252;berhaupt mit den Kreisen gu umgehen kann bei Lernen."
+101,150,21,female,1,5,Nein,
+102,151,26,female,9,8,Nein,Nach der 6. Wiederholung sinkt die Motivation und steigt die Frsutration
+103,154,20,female,5,5,Nein,
+104,155,19,male,5,4,Nein,Nein
+105,157,27,female,2,3,"Nein, ich habe keine Hilfsmittel genommen.",Nein
+106,158,21,female,3,6,nein,nein
+107,160,24,female,0,2,Nein,Nein
+108,161,22,female,0,10,Ich habe keine Hilfsmittel benutzt. ,Nein.
+109,162,18,female,2,4,Nein,Nein
+110,163,26,male,3,9,,
+111,164,29,female,4,9,,
+112,165,26,female,1,3,nein,"Ich vermute, dass ich in einer Art KG war. Ansonsten ist mir kein wesentlicher Unterschied bzgl. der Lernkategorien in den einzelnen Durchg&#228;ngen aufgefallen. Der Cut-Off zwischen A und B lag nahezu an der gleichen Stelle des Kreises, die Gr&#246;&#223;e der Form spielte keine Rolle. Dahingehend waren die vielen Lerndurchg&#228;nge etwas erm&#252;dend. Ich h&#228;tte mich &#252;ber etwas kniffligeres gefreut!"

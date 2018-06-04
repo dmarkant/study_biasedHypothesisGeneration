@@ -1,0 +1,5 @@
+*download_data.ipynb
+*.pyc
+*.ipynb_checkpoints
+*.DS_Store
+*participants*.db
