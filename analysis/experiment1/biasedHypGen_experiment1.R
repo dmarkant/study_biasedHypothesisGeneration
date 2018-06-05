@@ -229,6 +229,6 @@ attr(M, "contrasts") = attr.contrasts
 
 f2 = update(f, ~M)
 summary(f2)
-
 confint.default(f2)
+
 summary(glht(f2, c1), test = adjusted("bonferroni"))

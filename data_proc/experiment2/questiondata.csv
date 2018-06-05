@@ -1,0 +1,118 @@
+,sid,age,gender,difficulty,engagement,externalaids,howtoimprove
+0,234,24,female,2,4,nein,nein
+1,236,33,male,3,5,Nein,Nein
+2,238,25,male,4,8,keine hilfsmittel,"im ersten moment ist die bezeichnung ""test"" etwas irref&#252;hrend, weil es auch noch die bezeichnung ""lernen"" gibt. es k&#246;nnte also ""lernen"" und z.b. ""anwendung"" ...hei&#223;en"
+3,242,20,female,6,4,nein,nein
+4,243,22,male,0,1,,"Ich habe schnell bemerkt, dass die Der Erfolg lediglich von der dosierung der Chemikalie zusammen geh&#228;ngt hatte"
+5,244,28,female,0,2,Nein,Nein
+6,245,28,male,3,3,,
+7,246,23,female,2,5,Nein,"Die Aufgabe ist sehr einfach, da die erste Substanz ein minimum von 16.01 haben muss und die Menge der zweiten Substanz ist irrelevant.. Hier eventuell ein Megenverh&#228;tnis einbauen?"
+8,247,26,male,5,7,-,-
+9,248,22,female,1,2,Nein,
+10,249,20,female,2,5,Nein,"Nach vier Runden die Logik &#228;ndern, sonst wird die Aufgabe zu monoton, beziehungsweise sinkt dadurch die Konzentration"
+11,250,19,female,2,4,Nein,
+12,251,23,female,6,7,Nein.,Nein.
+13,252,27,female,5,7,,
+14,253,24,female,7,5,nein,nein
+15,254,24,female,1,8,,
+16,255,30,female,8,7,nein,nein
+17,256,27,noresp,9,9,nein,nein
+18,257,30,female,2,0,nein,nein
+19,258,30,male,3,1,Nein. Keine Hilfsmittel verwendet.,"Ich habe sehr schnell heraus gefunden, dass es egal ist, in welchem Verh&#228;ltnis der D&#252;nger kombiniert wird, hauptsache in der Summe ergab sich 35.8 %. Eventuell sollte dieser feste Wert sich mal ver&#228;ndern. "
+20,259,22,female,7,5,Nein,nein 
+21,260,23,male,3,8,,Die M&#246;glichkeit bei den Tests selbst Werte einzugeben hat zun&#228;chst eher geschadet als geholfen.
+22,261,28,male,3,5,Nein habe ich nicht. ,nein
+23,262,26,female,3,5,keine Hilfsmittel jeglicher Art,nein
+24,263,23,female,9,8,,
+25,264,28,male,8,8,nein,"Am Ende evtl fragen, ob man weitere Testl&#228;ufe durchlaufen will. Ich habe n&#228;mlich die letzten beiden weitgehend geskippt, d.h. Maus und Leertaste wiederholt nacheinander geklickt."
+26,266,29,male,2,5,Nein. Einfach zuf&#228;llig von Anfang an richtig vorgegangen und bemerkt da nur der Wert von b zwischen 0 - 15.99 liegen muss,"Ich h&#228;tte erwartet, dass sich das Experiment nach jedem Durchgang &#228;ndert, aber vermutlich ist es tats&#228;chlich ein Lernexperiment."
+27,267,27,male,2,5,Ich habe keinerlei Hilfsmittel verwendet!,"Es ist viel zu einfach. Die Anzahl der Probeversuche bzw. der Lernteil sollte gek&#252;rzt werden. Zumindest bei den folgenden Durchg&#228;ngen, gerade weil es immer die gleiche Grenze ist, ab der die Saat verdirbt."
+28,268,25,male,8,5,nein,
+29,269,33,female,7,7,Nein,
+30,271,26,female,9,2,Nein,Etwas zu viele Auswahlm&#246;glichkeiten auch 6 durchg&#228;nge w&#228;ren ausreichend
+31,272,23,female,2,9,Nein,
+32,273,31,male,0,5,Nein habe ich nicht,"Ich konnte nicht erkennen, worin die Schwierigkeit h&#228;tte liegen sollen, da es meiner Meinung nach lediglich um Substanz B ging, die mal knapp &#252;ber 15 oder &#252;ber 20 lag."
+33,274,25,male,0,0,Nein,Viiiiieeeeel zu einfach!!!
+34,275,27,male,0,5,Nein,Nein
+35,276,27,male,1,5,keine Hilfsmittel,Die Rahmenbedingungen blieben immer gleich?!
+36,277,31,female,5,8,,"Man wei&#223; nicht, wie viele Versuche man noch hat, bis das Lernen beendet ist und der Test beginnt. Aber ich nehme an, das ist beabsichtigt."
+37,278,23,female,4,4,,
+38,280,22,female,2,5,nein,
+39,281,26,female,7,7,nein,
+40,282,29,male,4,8,,
+41,283,24,male,5,5,nein,nein
+42,284,25,male,3,7,Nein,
+43,285,29,female,1,3,Nein,"Es w&#228;re weniger Langweilig, wenn es etwas neues zu lernen g&#228;be und nicht jeden Durchgang das selbe..."
+44,286,23,male,3,5,Keine Hilfsmittel benutzt,
+45,287,24,female,5,9,,Etwas eint&#246;nige Aufgabe
+46,288,28,male,1,2,,
+47,289,26,male,0,10,nein,nein
+48,290,25,male,5,8,nein,
+49,291,25,female,5,7,,
+50,292,18,male,5,7,,
+51,293,22,male,10,8,nein,
+52,294,19,male,4,2,Nein,Nein
+53,295,27,male,2,2,Nein.,Nein.
+54,296,21,female,1,7,Nein,Nein
+55,297,25,female,5,10,Nein,Nein
+56,298,24,male,6,10,nein,nein
+57,299,19,female,6,6,,
+58,300,21,female,5,5,Nein,Nein
+59,301,29,male,1,2,Nein. Es wurden keine Hilfsmittel genutzt oder Bildschirmaufnahmen get&#228;tig. ,Nein.
+60,302,26,male,3,5,Nein,
+61,303,26,female,2,3,Keine Hilfsmittel benutzt und es gibt kein Grund,Nein
+62,305,27,female,2,5,Nein,
+63,306,25,female,2,5,Nein,Nein
+64,307,25,female,6,8,,
+65,309,23,female,5,5,nein,nein
+66,310,33,male,2,9,Nein,Nein
+67,311,23,male,7,9,nein,nein
+68,312,21,male,3,5,Nein,Nein
+69,313,30,male,0,3,Nein,evtl. das D&#252;ngermittelminimum zur Mitte ver&#228;ndern
+70,314,25,female,3,5,keine,keine
+71,315,26,female,5,8,nein,
+72,316,29,male,8,5,Nein,Nein
+73,317,27,male,4,4,-,-
+74,318,29,male,3,6,keine Hilfsmittel genutzt,
+75,319,27,female,7,8,Nein,
+76,320,24,male,8,9,Nein,Nein
+77,321,28,female,2,5,nein,
+78,322,22,male,4,7,,
+79,323,25,female,8,5,Nein.,
+80,325,21,female,3,5,"Nein, keine Hilfsmittel.",Nein
+81,329,22,male,1,5,nein,nein
+82,330,25,female,9,10,-,-
+83,331,22,female,5,5,Nein.,Nein.
+84,332,25,female,5,6,,
+85,333,19,female,2,9,"Nein, ich habe keine zus&#228;tzlichen Hilfsmittel benutzt!",Nein. 
+86,334,25,female,4,5,nein,nein
+87,335,19,male,2,6,,
+88,336,22,female,4,6,,
+89,337,30,female,7,8,nein,war sehr interessant und hat spass gemacht
+90,338,31,male,7,7,"Nein, keine Hilfsmittel",Nein
+91,339,29,female,8,7,,
+92,342,21,male,7,1,Nein,Nein
+93,343,27,male,6,6,nein,
+94,344,25,male,0,5,nein,gerne mal den Grenzwert variieren
+95,345,25,male,5,5,N&#246;,N&#246;
+96,346,26,female,3,5,Nein,
+97,347,27,female,4,5,,
+98,348,26,male,6,6,Nein,Nein
+99,349,27,male,1,4,,"Vielleicht sollte bei jedem Test, die werte anders sein und die Chemikalie sollte auch ein zuspiel haben."
+100,350,19,male,3,8,Nein,
+101,351,24,female,0,3,Nein.,
+102,352,26,female,5,7,"Nein, ich habe nichts weiter benutzt. Nein, die Daten m&#252;ssen nicht ausgeschlossen werden, ich habe mich an die Instruktion gehalten.",Nein.
+103,353,21,male,4,7,nein,nein
+104,354,20,female,7,7,,
+105,355,27,female,3,5,nein,"nach der Lernphase kann es aus Versehen dazu kommen, dass man in der Testphase schon auf success oder Failur dr&#252;ckt. Schaltfl&#228;chen sollten dann woanders angebracht werden oder es sollte einen Zwischenbildschirm geben der darauf hinweisst dass es jetzt zur Testphase geht"
+106,356,22,female,1,0,,
+107,357,31,male,9,9,Nein,
+108,362,22,female,4,6,Ich habe keine Hilfsmittel benutzt,Nein.
+109,363,26,male,1,1,nein,"Ja, das Verh&#228;ltnis, welches zum Erfolg f&#252;hrt, k&#246;nnte in den Runden variieren. So ist es sehr berechenbar."
+110,364,26,female,4,7,"nein, nichts benutzt",
+111,365,25,male,5,3,Nein,Nein
+112,366,31,female,4,7,nein,
+113,367,25,female,1,3,Nein,"Die Aufgabe ist zu einfach, es w&#228;re schwieriger wenn sich die Regeln von Runde zu Runde &#228;ndern"
+114,374,28,male,4,6,Nein,
+115,376,25,female,6,7,-,Es war nicht einfach die richtige Mischung der Dosis herauszufinden/ errechnen.
+116,377,26,female,6,9,nein,"sch&#246;ne grafik, irgendwann kam man gut rein und ich hatte ein prinzip: d&#252;nger B darf nie kleiner 10 z.b."
