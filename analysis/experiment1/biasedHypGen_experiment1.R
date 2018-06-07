@@ -8,8 +8,6 @@ library(multcomp)
 setwd("~/studies/study_biasedHypothesisGeneration/analysis/experiment1")
 
 
-# Classification accuracy ----
-
 data = read.csv('../../data_proc/experiment1/data_by_block.csv')
 data$sid = factor(data$sid)
 data$cond = factor(data$cond)
@@ -17,6 +15,8 @@ data$stimtype = factor(data$stimtype)
 data$ruletype = relevel(factor(data$ruletype), ref='rb')
 data$rulevariant = factor(data$rulevariant)
 data$block = scale(data$block)
+
+# Classification accuracy ----
 
 # the model
 m = glmer(acc ~ stimtype*ruletype + block + ruletype/rulevariant + (1|sid), 
