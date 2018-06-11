@@ -1,4 +1,5 @@
 library(lme4)
+library(lmerTest)
 library(plyr)
 library(grid)
 library(gridExtra)
@@ -18,8 +19,30 @@ data$block = scale(data$block)
 
 # Classification accuracy ----
 
+
+# comparisons
+m1 = glmer(acc ~ stimtype*ruletype + block + ruletype/rulevariant + (1|sid), 
+          weights=rep(32, nrow(data)), data=data, family=binomial, 
+          control = glmerControl(optimizer = "bobyqa"), nAGQ = 10)
+
+m2 = glmer(acc ~ stimtype*ruletype*block + ruletype/rulevariant + (1|sid), 
+           weights=rep(32, nrow(data)), data=data, family=binomial, 
+           control = glmerControl(optimizer = "bobyqa"), nAGQ = 10)
+
+m3 = glmer(acc ~ stimtype*ruletype*block + block*ruletype/rulevariant + (1|sid), 
+           weights=rep(32, nrow(data)), data=data, family=binomial, 
+           control = glmerControl(optimizer = "bobyqa"), nAGQ = 10)
+anova(m2,m3)
+
+
 # the model
-m = glmer(acc ~ stimtype*ruletype + block + ruletype/rulevariant + (1|sid), 
+
+#m = glmer(acc ~ stimtype*ruletype + block + ruletype/rulevariant + (1|sid), 
+#          weights=rep(32, nrow(data)), data=data, family=binomial, 
+#          control = glmerControl(optimizer = "bobyqa"), nAGQ = 10)
+#summary(m)
+
+m = glmer(acc ~ stimtype*ruletype*block + ruletype/rulevariant + (1|sid), 
           weights=rep(32, nrow(data)), data=data, family=binomial, 
           control = glmerControl(optimizer = "bobyqa"), nAGQ = 10)
 summary(m)
@@ -151,6 +174,101 @@ TukeyHSD(m)$`stimtype:ruletype`
 ddply(agg, c('stimtype', 'ruletype'), function(x) {
   c(mn=mean(x$mn.dist), sd=sd(x$mn.dist))
 })
+
+
+## New model of sample distance with block effects
+
+m = lmer(dist_med ~ stimtype*ruletype*block + (1|sid),
+         data=data)
+summary(m)
+
+
+m1 = lmer(dist_med ~ stimtype*ruletype + block + (1|sid),
+         data=data)
+
+m2 = lmer(dist_med ~ stimtype*ruletype*block + (1|sid),
+         data=data)
+anova(m1,m2)
+
+m3 = lmer(dist_med ~ stimtype*ruletype + block + ruletype/rulevariant + (1|sid),
+          data=data)
+anova(m2,m3)
+
+m4 = lmer(dist_med ~ stimtype*ruletype*block + block*(ruletype/rulevariant) + (1|sid),
+          data=data)
+anova(m3,m4)
+
+m = m4
+D1_DIAL_ANGLE  = c(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+D1_DIAL_RADIUS = c(1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0)
+D1_RECT_WIDTH  = c(1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+D1_RECT_HEIGHT = c(1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0)
+D2_DIAL_POS    = c(1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0)
+D2_DIAL_NEG    = c(1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0)
+D2_RECT_SIZE   = c(1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0)
+D2_RECT_SHAPE  = c(1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0)
+
+block_D1_DIAL_ANGLE   = c(0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0)
+block_D1_DIAL_RADIUS  = c(0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0)
+block_D1_RECT_WIDTH   = c(0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0)
+block_D1_RECT_HEIGHT  = c(0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0)
+block_D2_DIAL_POS     = c(0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0)
+block_D2_DIAL_NEG     = c(0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,0)
+block_D2_RECT_SIZE    = c(0,0,0,1,0,1,1,0,0,0,0,1,0,0,0,0)
+block_D2_RECT_SHAPE   = c(0,0,0,1,0,1,1,0,0,0,0,1,0,0,0,1)
+
+c1 = rbind("D1_DIAL - D1_RECT" = ((D1_DIAL_ANGLE + D1_DIAL_RADIUS)/2 - (D1_RECT_WIDTH + D1_RECT_HEIGHT)/2),
+           "D1_DIAL - D2_DIAL" = ((D1_DIAL_ANGLE + D1_DIAL_RADIUS)/2 - (D2_DIAL_POS + D2_DIAL_NEG)/2),
+           "D1_DIAL - D2_RECT" = ((D1_DIAL_ANGLE + D1_DIAL_RADIUS)/2 - (D2_RECT_SIZE + D2_RECT_SHAPE)/2),
+           "D1_RECT - D2_DIAL" = ((D1_RECT_WIDTH + D1_RECT_HEIGHT)/2 - (D2_DIAL_POS + D2_DIAL_NEG)/2),
+           "D1_RECT - D2_RECT" = ((D1_RECT_WIDTH + D1_RECT_HEIGHT)/2 - (D2_RECT_SIZE + D2_RECT_SHAPE)/2),
+           "D2_DIAL - D2_RECT" = ((D2_DIAL_POS + D2_DIAL_NEG)/2 - (D2_RECT_SIZE + D2_RECT_SHAPE)/2),
+           "D1_DIAL_ANGLE - D1_DIAL_RADIUS" = D1_DIAL_ANGLE - D1_DIAL_RADIUS,
+           "D1_RECT_WIDTH - D1_RECT_HEIGHT" = D1_RECT_WIDTH - D1_RECT_HEIGHT,
+           "D2_DIAL_POS - D2_DIAL_NEG" = D2_DIAL_POS - D2_DIAL_NEG,
+           "D2_RECT_SIZE - D2_RECT_SHAPE" = D2_RECT_SIZE - D2_RECT_SHAPE,
+           "D2_DIAL_NEG - D2_RECT_SIZE" = D2_DIAL_NEG - D2_RECT_SIZE,
+           "block_D1_DIAL_ANGLE - block_D1_DIAL_RADIUS" = block_D1_DIAL_ANGLE - block_D1_DIAL_RADIUS,
+           "block_D1_RECT_WIDTH - block_D1_RECT_HEIGHT" = block_D1_RECT_WIDTH - block_D1_RECT_HEIGHT,
+           "block_D2_DIAL_POS - block_D2_DIAL_NEG" = block_D2_DIAL_POS - block_D2_DIAL_NEG,
+           "block_D2_RECT_SIZE - block_D2_RECT_SHAPE" = block_D2_RECT_SIZE - block_D2_RECT_SHAPE)
+
+
+summary(glht(m, c1), test = adjusted("bonferroni"))
+confint(glht(m, c1))
+
+# Visualize model fit
+
+data$pred_dist = predict(m4, type='response')
+
+r = ddply(data, c('stimtype', 'ruletype', 'block', 'rulevariant'), function(x) { 
+  mn = mean(x$dist_med) 
+  mn_pr = mean(x$pred_dist)
+  data.frame(obs=mn, pred=mn_pr)
+})
+
+p1 = ggplot(data=r[r$stimtype=='antenna' & r$ruletype=='rb',]) +
+  geom_line(aes(x=block, y=obs, col=rulevariant)) +
+  geom_line(aes(x=block, y=pred, col=rulevariant), linetype=2) +
+  ylim(0, 2)
+
+p2 = ggplot(data=r[r$stimtype=='rectangle' & r$ruletype=='rb',]) +
+  geom_line(aes(x=block, y=obs, col=rulevariant)) +
+  geom_line(aes(x=block, y=pred, col=rulevariant), linetype=2) +
+  ylim(0, 2)
+
+p3 = ggplot(data=r[r$stimtype=='antenna' & r$ruletype=='ii',]) +
+  geom_line(aes(x=block, y=obs, col=rulevariant)) +
+  geom_line(aes(x=block, y=pred, col=rulevariant), linetype=2) +
+  ylim(0, 2)
+
+p4 = ggplot(data=r[r$stimtype=='rectangle' & r$ruletype=='ii',]) +
+  geom_line(aes(x=block, y=obs, col=rulevariant)) +
+  geom_line(aes(x=block, y=pred, col=rulevariant), linetype=2) +
+  ylim(0, 2)
+
+grid.arrange(p1, p2, p3, p4)
+
 
 
 # Proportion of 2D rules ----

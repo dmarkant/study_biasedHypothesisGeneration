@@ -16,14 +16,60 @@ data$rulerelation = factor(data$rulerelation)
 data$block = scale(data$block)
 
 
+
+data$prev_acc = NaN
+for (sid in levels(data$sid)) {
+  acc = data[data$sid==sid,]$acc
+  prev_acc = c(0.5, acc[1:7])
+  data[data$sid==sid, 'prev_acc'] = prev_acc
+}
+
+#prev_acc = dlply(data, c('sid'), function(x) {
+#  acc = x$acc
+#  prev_acc = c(0.5, acc[1:7])
+#  c(acc_t=prev_acc)
+#})
+data$change_acc = data$acc - data$prev_acc
+
+data$prev_acc = scale(data$prev_acc)
+data$change_acc = scale(data$change_acc)
+
+
+data$hyp2D = as.logical(data$X2drule_aic)
+data$hypMatch = ((data$ruletype=='1D') & (!data$hyp2D)) | ((data$ruletype=='2D') & (data$hyp2D))
+
+
+data$prev_hypMatch = NaN
+for (sid in levels(data$sid)) {
+  hypm = data[data$sid==sid,]$hypMatch
+  prev_hypm = c(NaN, hypm[1:7])
+  data[data$sid==sid, 'prev_hypMatch'] = prev_hypm
+}
+
+
+
 # Classification accuracy ----
 
 # the model
-m = glmer(acc ~ dimtype*ruletype + block + ruletype/rulerelation + (1|sid),
+m1 = glmer(acc ~ dimtype*ruletype + block + ruletype/rulerelation + (1|sid),
           weights=rep(32, nrow(data)),
           data=data, family=binomial, control = glmerControl(optimizer = "bobyqa"),
           nAGQ = 10)
 summary(m)
+
+m2 = glmer(acc ~ dimtype*ruletype*block + ruletype/rulerelation + (1|sid),
+          weights=rep(32, nrow(data)),
+          data=data, family=binomial, control = glmerControl(optimizer = "bobyqa"),
+          nAGQ = 10)
+summary(m)
+
+m3 = glmer(acc ~ dimtype*ruletype*block + block*(ruletype/rulerelation) + (1|sid),
+           weights=rep(32, nrow(data)),
+           data=data, family=binomial, control = glmerControl(optimizer = "bobyqa"),
+           nAGQ = 10)
+summary(m)
+
+m = m3
 
 # odds ratios
 exp(fixef(m))
@@ -153,6 +199,119 @@ TukeyHSD(m)$`stimtype:ruletype`
 ddply(agg, c('dimtype', 'ruletype'), function(x) {
   c(mn=mean(x$mn.dist), sd=sd(x$mn.dist))
 })
+
+
+## New model of sample distance with block effects
+
+m = lmer(dist_med ~ dimtype*ruletype*block + change_acc*prev_acc + (1|sid), 
+         data=data)
+summary(m)
+
+
+m1 = lmer(dist_med ~ dimtype*ruletype*block + hypMatch*prev_acc*change_acc + (1|sid), 
+         data=data)
+summary(m1)
+
+anova(m,m1)
+
+
+
+data$pred_dist = predict(m1, type='response')
+
+r = ddply(data, c('dimtype', 'ruletype', 'rulerelation', 'block'), function(x) { 
+  mn = mean(x$dist_med) 
+  mn_pr = mean(x$pred_dist)
+  data.frame(obs=mn, pred=mn_pr)
+})
+
+p1 = ggplot(data=r[r$dimtype=='absolute' & r$ruletype=='1D',]) +
+  geom_line(aes(x=block, y=obs, col=rulerelation)) +
+  geom_line(aes(x=block, y=pred, col=rulerelation), linetype=2) +
+  ylim(0.4, 1.1)
+
+p2 = ggplot(data=r[r$dimtype=='relative' & r$ruletype=='1D',]) +
+  geom_line(aes(x=block, y=obs, col=rulerelation)) +
+  geom_line(aes(x=block, y=pred, col=rulerelation), linetype=2) +
+  ylim(0.4, 1.1)
+
+p3 = ggplot(data=r[r$dimtype=='absolute' & r$ruletype=='2D',]) +
+  geom_line(aes(x=block, y=obs, col=rulerelation)) +
+  geom_line(aes(x=block, y=pred, col=rulerelation), linetype=2) +
+  ylim(0.4, 1.1)
+
+p4 = ggplot(data=r[r$dimtype=='relative' & r$ruletype=='2D',]) +
+  geom_line(aes(x=block, y=obs, col=rulerelation)) +
+  geom_line(aes(x=block, y=pred, col=rulerelation), linetype=2) +
+  ylim(0.4, 1.1)
+
+grid.arrange(p1, p2, p3, p4)
+
+
+
+
+m = lmer(dist_med ~ stimtype*ruletype*block + (1|sid),
+         data=data)
+summary(m)
+
+
+m1 = lmer(dist_med ~ stimtype*ruletype + block + (1|sid),
+          data=data)
+
+m2 = lmer(dist_med ~ stimtype*ruletype*block + (1|sid),
+          data=data)
+anova(m1,m2)
+
+m3 = lmer(dist_med ~ stimtype*ruletype + block + ruletype/rulevariant + (1|sid),
+          data=data)
+anova(m2,m3)
+
+m4 = lmer(dist_med ~ stimtype*ruletype*block + block*(ruletype/rulevariant) + (1|sid),
+          data=data)
+anova(m3,m4)
+
+m = m4
+D1_DIAL_ANGLE  = c(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+D1_DIAL_RADIUS = c(1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0)
+D1_RECT_WIDTH  = c(1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+D1_RECT_HEIGHT = c(1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0)
+D2_DIAL_POS    = c(1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0)
+D2_DIAL_NEG    = c(1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0)
+D2_RECT_SIZE   = c(1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0)
+D2_RECT_SHAPE  = c(1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0)
+
+block_D1_DIAL_ANGLE   = c(0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0)
+block_D1_DIAL_RADIUS  = c(0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0)
+block_D1_RECT_WIDTH   = c(0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0)
+block_D1_RECT_HEIGHT  = c(0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0)
+block_D2_DIAL_POS     = c(0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0)
+block_D2_DIAL_NEG     = c(0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,0)
+block_D2_RECT_SIZE    = c(0,0,0,1,0,1,1,0,0,0,0,1,0,0,0,0)
+block_D2_RECT_SHAPE   = c(0,0,0,1,0,1,1,0,0,0,0,1,0,0,0,1)
+
+c1 = rbind("D1_DIAL - D1_RECT" = ((D1_DIAL_ANGLE + D1_DIAL_RADIUS)/2 - (D1_RECT_WIDTH + D1_RECT_HEIGHT)/2),
+           "D1_DIAL - D2_DIAL" = ((D1_DIAL_ANGLE + D1_DIAL_RADIUS)/2 - (D2_DIAL_POS + D2_DIAL_NEG)/2),
+           "D1_DIAL - D2_RECT" = ((D1_DIAL_ANGLE + D1_DIAL_RADIUS)/2 - (D2_RECT_SIZE + D2_RECT_SHAPE)/2),
+           "D1_RECT - D2_DIAL" = ((D1_RECT_WIDTH + D1_RECT_HEIGHT)/2 - (D2_DIAL_POS + D2_DIAL_NEG)/2),
+           "D1_RECT - D2_RECT" = ((D1_RECT_WIDTH + D1_RECT_HEIGHT)/2 - (D2_RECT_SIZE + D2_RECT_SHAPE)/2),
+           "D2_DIAL - D2_RECT" = ((D2_DIAL_POS + D2_DIAL_NEG)/2 - (D2_RECT_SIZE + D2_RECT_SHAPE)/2),
+           "D1_DIAL_ANGLE - D1_DIAL_RADIUS" = D1_DIAL_ANGLE - D1_DIAL_RADIUS,
+           "D1_RECT_WIDTH - D1_RECT_HEIGHT" = D1_RECT_WIDTH - D1_RECT_HEIGHT,
+           "D2_DIAL_POS - D2_DIAL_NEG" = D2_DIAL_POS - D2_DIAL_NEG,
+           "D2_RECT_SIZE - D2_RECT_SHAPE" = D2_RECT_SIZE - D2_RECT_SHAPE,
+           "D2_DIAL_NEG - D2_RECT_SIZE" = D2_DIAL_NEG - D2_RECT_SIZE,
+           "block_D1_DIAL_ANGLE - block_D1_DIAL_RADIUS" = block_D1_DIAL_ANGLE - block_D1_DIAL_RADIUS,
+           "block_D1_RECT_WIDTH - block_D1_RECT_HEIGHT" = block_D1_RECT_WIDTH - block_D1_RECT_HEIGHT,
+           "block_D2_DIAL_POS - block_D2_DIAL_NEG" = block_D2_DIAL_POS - block_D2_DIAL_NEG,
+           "block_D2_RECT_SIZE - block_D2_RECT_SHAPE" = block_D2_RECT_SIZE - block_D2_RECT_SHAPE)
+
+
+summary(glht(m, c1), test = adjusted("bonferroni"))
+confint(glht(m, c1))
+
+
+
+
+
 
 
 # Proportion of 2D rules ----
